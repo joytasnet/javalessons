@@ -2,8 +2,19 @@ public class Cleric{
 	String name;
 	int hp;
 	int mp;
-	final int MAX_HP=50;
-	final int MAX_MP=10;
+	static final int MAX_HP=50;
+	static final int MAX_MP=10;
+	Cleric(String name,int hp,int mp){
+		this.name=name;
+		this.hp=hp;
+		this.mp=mp;
+	}
+	Cleric(String name,int hp){
+		this(name,hp,MAX_MP);
+	}
+	Cleric(String name){
+		this(name,MAX_HP);
+	}
 	void selfAid(){
 		this.mp-=5;
 		this.hp=MAX_HP;

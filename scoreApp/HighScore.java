@@ -1,20 +1,24 @@
-import java.util.*;
-import java.text.*;
 public class HighScore{
 	private int score;
-	private String date;
-	public HighScore(int score,String date){
+	private String date="";
+	private boolean update=false;
+	
+	public void setScore(int score){
 		this.score=score;
-		this.date=date;
-	}
-	public HighScore(int score){
-		this.score=score;
-		Date today=new Date();
-		SimpleDateFormat sdf=new SimpleDateFormat("yyyy/MM/dd");
-		this.date=sdf.format(today);
 	}
 	public int getScore(){
 		return this.score;
+	}
+	
+	public void setDate(String date){
+		this.date=date;
+	}
+	
+	public boolean isUpdate() {
+		return update;
+	}
+	public void setUpdate(boolean update) {
+		this.update = update;
 	}
 	public String toCSV(){
 		return this.score+","+this.date;
